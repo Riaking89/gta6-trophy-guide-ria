@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — Leonida Checklist</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <h1>GTA VI Trophy Guide</h1>
+    <p class="sub">Every one of the 55 PlayStation 5 trophies for Grand Theft Auto VI — official names, descriptions and grades, a guide for each in our own words, and a tracker that saves your progress in this browser. Works fully offline.</p>
+  </div>
+  <div class="progress" id="progressBox">
+    <div class="progress-num"><span id="earnedCount">0</span> of <span id="totalCount">55</span> earned</div>
+    <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    <div class="progress-grades" id="gradeCounts"></div>
+  </div>
+</header>
+
+<section class="roadmap" id="roadmap">
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmap-intro">Difficulty 4/10 · about 200 hours · one playthrough · 0 online trophies · 1 potentially missable. Cheats disable trophies and saving — keep them off. There is no mission replay, so save manually at the start and end of every chapter.</p>
+  <div class="stages">
+    <article class="stage">
+      <h3>Stage 1 — Play the story <span class="stage-count">23 trophies · 60–80 h</span></h3>
+      <p>Finish the 5 chapters and the story missions. Do the Chapter 1 meditation for <strong>Positive Mental Attitude</strong> (the only missable trophy) before Chapter 1 ends. Try activities as they appear, scan and drive new vehicles, and start the stranger and character strands as they unlock.</p>
+    </article>
+    <article class="stage">
+      <h3>Stage 2 — 100% completion <span class="stage-count">23 trophies · ~100 h</span></h3>
+      <p>After the story, open <strong>Progress &gt; Stats &gt; 100% Completion</strong> for the in-game checklist. Clear the robberies, collectibles (cards, WAiNK, underwater, flamingos), races, stunts and challenges. Nothing on the checklist is missable.</p>
+    </article>
+    <article class="stage">
+      <h3>Stage 3 — Clean-up <span class="stage-count">8 trophies · ~10 h</span></h3>
+      <p>Finish the 8 Strangers &amp; Freaks strands, the character final missions, and whatever is left on your list. Then <strong>Vice Got a Price!</strong> pops with the other 54.</p>
+    </article>
+  </div>
+  <p class="missable-callout" id="missableCallout">⚠ Missable: <strong>Positive Mental Attitude</strong> — meditate with Lucia on the balcony at Jason's house in Chapter 1, after the mission Down to Earth. It is the only trophy any guide flags as potentially missable.</p>
+</section>
+
+<section class="controls" id="controls">
+  <label class="search">Search <input id="search" type="search" placeholder="Name or description…" autocomplete="off"></label>
+  <label>Grade <select id="gradeFilter"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label>Kind <select id="kindFilter"><option value="all">All kinds</option><option value="story">Story</option><option value="side">Side missions</option><option value="missable">Missable</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="robbery">Robbery</option><option value="economy">Money &amp; property</option><option value="misc">Other</option><option value="online">Online</option></select></label>
+  <label>Stage <select id="stageFilter"><option value="all">All stages</option><option value="1">Stage 1 — Story</option><option value="2">Stage 2 — 100%</option><option value="3">Stage 3 — Clean-up</option><option value="4">Platinum</option></select></label>
+  <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+  <label class="toggle"><input id="earnedOnly" type="checkbox"> Earned only</label>
+  <button id="expandAll" type="button">Expand all guides</button>
+  <button id="collapseAll" type="button">Collapse all</button>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json"></label>
+  <button id="resetBtn" type="button">Reset</button>
+</section>
+
+<p class="list-meta" id="listMeta"></p>
+<main id="trophyList" class="trophy-list"></main>
+
+<footer>
+  <p>Official names, descriptions and grades are as PlayStation publishes them, as mirrored by Exophase and PSNProfiles. Every guide is written in our own words for this page and cites its sources beside each trophy — a source is cited, never copied. 28 of the 55 trophies are hidden on PlayStation until earned; the spoiler switch hides the 12 story trophies until you tick them. No Rockstar artwork or logo is used; the look is our own. This guide works fully offline and fetches nothing.</p>
+  <p class="sources-note">List sources: Exophase &amp; PSNProfiles trophy lists (via the official list). Guide sources: PowerPyx, GTA Base, KeenGamer, GTA Spotter, Insider Gaming, eGamers and OutputLag — linked beside each trophy.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
