@@ -102,12 +102,14 @@ function buildTrophyCard(trophy) {
   card.dataset.trophyId = String(trophy.id);
   if (earned.has(trophy.id)) card.classList.add('earned');
 
+  const hidden = trophyIsHidden(trophy);
   const head = document.createElement('div');
   head.className = 'trophy-head';
   const box = document.createElement('input');
   box.type = 'checkbox';
   box.checked = earned.has(trophy.id);
-  box.setAttribute('aria-label', `Mark ${trophy.name} as earned`);
+  // A hidden story trophy's name must not leak through the accessible label either.
+  box.setAttribute('aria-label', hidden ? 'Mark hidden story trophy as earned' : `Mark ${trophy.name} as earned`);
   box.addEventListener('change', () => {
     if (box.checked) earned.add(trophy.id);
     else earned.delete(trophy.id);
@@ -121,7 +123,7 @@ function buildTrophyCard(trophy) {
   name.className = 'name';
   const official = document.createElement('div');
   official.className = 'official';
-  if (trophyIsHidden(trophy)) {
+  if (hidden) {
     name.textContent = 'Hidden story trophy';
     official.textContent = 'Story trophy — its name and description stay hidden until you earn it.';
   } else {
@@ -152,11 +154,11 @@ function buildTrophyCard(trophy) {
 
   const body = document.createElement('div');
   body.className = 'guide-body';
-  if (trophyIsHidden(trophy)) {
-    const hidden = document.createElement('p');
-    hidden.className = 'guide-text';
-    hidden.textContent = 'Guide hidden until earned — tick the trophy (or turn off “Hide story spoilers”) to reveal it.';
-    body.append(hidden);
+  if (hidden) {
+    const hiddenNote = document.createElement('p');
+    hiddenNote.className = 'guide-text';
+    hiddenNote.textContent = 'Guide hidden until earned — tick the trophy (or turn off “Hide story spoilers”) to reveal it.';
+    body.append(hiddenNote);
   } else {
     const guide = document.createElement('p');
     guide.className = 'guide-text';
